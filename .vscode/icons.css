@@ -1,0 +1,91 @@
+.codicon-explorer-view-icon {
+  color: #4db6ac !important;
+}
+
+.codicon-source-control-view-icon,
+.codicon-git-branch,
+.codicon-git-commit {
+  color: #f54d27 !important;
+}
+
+.codicon-run-view-icon, .codicon-debug-alt-small, .codicon-testing-debug-icon {
+  color: #b24855 !important;
+}
+
+.codicon-test-view-icon {
+  color: #9B46D3 !important
+}
+
+a[class^="action-label activity-workbench-view-extension-dockerView"] {
+  background-color: #2496ed !important;
+}
+
+a[class^="action-label activity-workbench-view-extension-PowerShellCommandExplorer"] {
+  background-color: #4879d5 !important;
+}
+
+a[class^="action-label activity-workbench-view-extension-sqltoolsActivityBarContainer"] {
+  background-color: #f0a028 !important;
+}
+
+.codicon-database {
+  color: #f0a028 !important;
+}
+
+a[class^="action-label activity-workbench-view-extension-foldersCompare"] {
+  background-color: #4db6ac !important;
+}
+a[class^="action-label activity-workbench-view-extension-thunder-client-sidebar-view"] {
+  background-color: #924e96 !important;
+}
+a[class^="action-label activity-workbench-view-extension-nx-console"] {
+  background-color: #96d8e9 !important;
+}
+.codicon-extensions-view-icon {
+  color: #33a38e !important;
+}
+.codicon-remote-explorer-view-icon, .codicon-remote {
+  color: #D64613 !important;
+}
+.codicon-search-view-icon, .codicon-sync {
+  color: #0277bd !important;
+}
+
+.codicon-accounts-view-bar-icon, .codicon-eye {
+  color: #2bb8cd !important;
+}
+.codicon-settings-view-bar-icon {
+  color: #999 !important;
+}
+
+.codicon-error, .codicon-circle-slash {
+  color: #B64447 !important;
+}
+
+.codicon-warning {
+  color: #f2c200 !important;
+}
+
+.codicon-check-all, .codicon-check, .codicon-pass, .codicon-shield, .codicon-testing-run-icon, .codicon-play {
+  color: green !important;
+}
+
+.codicon-paintcan {
+  color: #e10079 !important;
+}
+
+.codicon-bell, .codicon-bell-dot {
+  color: #D7A405 !important;
+}
+
+.codicon-cloud-upload, .codicon-question, .codicon-broadcast {
+  color: cadetblue !important;
+}
+
+.codicon-go-to-file {
+  color: #75beff;
+}
+
+#status\.feedback {
+  display: none !important;
+}

@@ -35,12 +35,23 @@ a[class^="action-label activity-workbench-view-extension-sqltoolsActivityBarCont
 a[class^="action-label activity-workbench-view-extension-foldersCompare"] {
   background-color: #4db6ac !important;
 }
+
 a[class^="action-label activity-workbench-view-extension-thunder-client-sidebar-view"] {
   background-color: #924e96 !important;
 }
+
 a[class^="action-label activity-workbench-view-extension-nx-console"] {
   background-color: #96d8e9 !important;
 }
+
+a[class^="action-label activity-workbench-view-extension-bookmarks"] {
+  background-color: #157EFB !important;
+}
+
+a[class^="action-label activity-workbench-view-extension-todo-tree"] {
+  background-color: #f0a028 !important;
+}
+
 .codicon-extensions-view-icon {
   color: #33a38e !important;
 }

@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Except these files
+!.gitignore
+!README.md
+!.vscode/icons.css
+!.wslconfig

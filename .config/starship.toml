@@ -1,0 +1,4 @@
+format = "WIN -> $all"
+
+[directory]
+truncation_symbol = "…/"

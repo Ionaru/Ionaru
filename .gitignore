@@ -6,3 +6,5 @@
 !README.md
 !.vscode/icons.css
 !.wslconfig
+!.config/starship.toml
+!Documents/Powershell/Profile.ps1

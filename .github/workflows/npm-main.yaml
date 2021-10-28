@@ -7,11 +7,11 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-    uses: Ionaru/Ionaru/.github/workflows/npm/npm-test.yaml
+    uses: Ionaru/Ionaru/.github/workflows/npm/npm-test.yaml@main
 
   deploy:
 
     needs: [ test ]
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
-    uses: Ionaru/Ionaru/.github/workflows/npm/npm-test.yaml
+    uses: Ionaru/Ionaru/.github/workflows/npm/npm-test.yaml@main

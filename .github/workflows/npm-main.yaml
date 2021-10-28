@@ -53,7 +53,7 @@ jobs:
 
     needs: [ test ]
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && ${{ secrets.NPM_TOKEN }}
+    if: ${{ github.event_name == 'push' && secrets.NPM_TOKEN }}
 
     steps:
       - uses: actions/setup-node@v2

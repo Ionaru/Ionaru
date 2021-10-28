@@ -1,0 +1,17 @@
+name: npm package CI/CD
+
+on: [workflow_call]
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+    uses: Ionaru/Ionaru/.github/workflows/npm/npm-test.yaml
+
+  deploy:
+
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    uses: Ionaru/Ionaru/.github/workflows/npm/npm-test.yaml

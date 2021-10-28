@@ -1,10 +1,12 @@
 # Ignore everything
 /*
 
-# Except these files
+# Except these files/folders
 !.gitignore
+!.editorconfig
 !README.md
 !.vscode/icons.css
 !.wslconfig
 !.config/starship.toml
 !Documents/Powershell/Profile.ps1
+!.github/

@@ -4,11 +4,12 @@
 
 <p align="center">
 <a href="https://www.linkedin.com/in/jeroen--akkerman/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://stackoverflow.com/users/6413844/"><img src="https://img.shields.io/badge/StackOverflow-%23F48225.svg?&style=for-the-badge&logo=stackoverflow&logoColor=white" alt="StackOverflow"/></a>
 </p>
 
 <br>
 
-<p align="center">I'm an ambitious full-stack developer from the Netherlands that specialises in web development, however I do not shy away from non-web programming.</p>
+<p align="center">I'm an ambitious full-stack developer and Scrum Master from the Netherlands that specialises in web development, however I do not shy away from non-web programming.</p>
 
 <h2 align="center">About me</h2>
 <p align="center">

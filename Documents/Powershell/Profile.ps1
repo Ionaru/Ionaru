@@ -63,6 +63,15 @@ function Set-FileTouched {
     }
 }
 
+function Get-MyRepo {
+    Param(
+      [Parameter(Mandatory=$true)]
+      [string]$Repo
+    )
+
+    git clone https://github.com/Ionaru/$Repo
+}
+
 Set-Alias -Name npmu -Value Update-NPMModules
 Set-Alias -Name npmr -Value Update-NPMLockfile
 Set-Alias -Name hosts -Value Set-Hosts
@@ -74,6 +83,7 @@ Set-Alias -Name split -Value Open-TerminalPane
 Set-Alias -Name np -Value Open-TerminalPane
 Set-Alias -Name npmit -Value Get-TypedNPMPackage
 Set-Alias -Name touch -Value Set-FileTouched
+Set-Alias -Name clone -Value Get-MyRepo
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 

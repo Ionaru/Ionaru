@@ -1,3 +1,5 @@
+$ConfigFolder = (get-item $PROFILE.CurrentUserAllHosts).Directory.FullName
+
 function Set-Hosts {
     # Open the Windows hostsfile in VSCode.
     code C:\Windows\System32\drivers\etc\hosts
@@ -5,7 +7,7 @@ function Set-Hosts {
 
 function Set-PowerShellConfig {
     # Open the powershell config folder in VSCode.
-    code (get-item $PROFILE.CurrentUserAllHosts).Directory
+    code $ConfigFolder
 }
 
 function Update-NPMModules {
@@ -86,8 +88,6 @@ Set-Alias -Name touch -Value Set-FileTouched
 Set-Alias -Name clone -Value Get-MyRepo
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-$ConfigFolder = (get-item $PROFILE.CurrentUserAllHosts).Directory.FullName
 
 $PlatformExtensionsFile = "$ConfigFolder\PlatformExtensions.ps1"
 if (Test-Path -Path $PlatformExtensionsFile -PathType Leaf) {

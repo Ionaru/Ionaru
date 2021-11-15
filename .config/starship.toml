@@ -2,3 +2,15 @@ format = "WIN -> $all"
 
 [directory]
 truncation_symbol = "…/"
+
+[nodejs]
+symbol = "⬢ "
+
+[docker_context]
+disabled = true
+
+[git_metrics]
+disabled = false
+
+[git_commit]
+only_detached = false

@@ -1,5 +1,24 @@
 $ConfigFolder = (get-item $PROFILE.CurrentUserAllHosts).Directory.FullName
 
+Function Test-CommandExists
+{
+    Param ($command)
+    $oldPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'stop'
+
+    try { if (Get-Command $command) { RETURN $true } }
+    Catch { Write-Host "$command does not exist"; RETURN $false }
+    Finally { $ErrorActionPreference = $oldPreference }
+}
+
+function Update-All {
+    if (test scoop) {
+        scoop update
+        scoop cleanup *
+    }
+    npm-check -guy
+}
+
 function Set-Hosts {
     # Open the Windows hostsfile in VSCode.
     code C:\Windows\System32\drivers\etc\hosts
@@ -28,8 +47,8 @@ function Update-NPMLockfile {
 function Get-TypedNPMPackage {
     # Installs an npm module and its @types/ package.
     Param(
-      [Parameter(Mandatory=$true)]
-      [string]$Module
+        [Parameter(Mandatory = $true)]
+        [string]$Module
     )
 
     npm i $Module
@@ -54,26 +73,29 @@ function Open-TerminalPane {
 function Set-FileTouched {
     # Creates a file, or updates its 'last edited' value.
     Param(
-      [Parameter(Mandatory=$true)]
-      [string]$Path
+        [Parameter(Mandatory = $true)]
+        [string]$Path
     )
 
     if (Test-Path -LiteralPath $Path) {
       (Get-Item -Path $Path).LastWriteTime = Get-Date
-    } else {
-      New-Item -Type File -Path $Path
+    }
+    else {
+        New-Item -Type File -Path $Path
     }
 }
 
 function Get-MyRepo {
     Param(
-      [Parameter(Mandatory=$true)]
-      [string]$Repo
+        [Parameter(Mandatory = $true)]
+        [string]$Repo
     )
 
     git clone https://github.com/Ionaru/$Repo
 }
 
+Set-Alias -Name test -Value Test-CommandExists
+Set-Alias -Name update -Value Update-All
 Set-Alias -Name npmu -Value Update-NPMModules
 Set-Alias -Name npmr -Value Update-NPMLockfile
 Set-Alias -Name hosts -Value Set-Hosts

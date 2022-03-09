@@ -44,6 +44,16 @@ function Update-NPMLockfile {
     npm install
 }
 
+function Get-InstalledGlobalNPMPackages {
+    # Returns a list of all globally installed NPM packages.
+    npm list -g --depth=0
+}
+
+function Get-InstalledNPMPackages {
+    # Returns a list of all installed NPM packages.
+    npm list --depth=0
+}
+
 function Get-TypedNPMPackage {
     # Installs an npm module and its @types/ package.
     Param(
@@ -98,6 +108,8 @@ Set-Alias -Name test -Value Test-CommandExists
 Set-Alias -Name update -Value Update-All
 Set-Alias -Name npmu -Value Update-NPMModules
 Set-Alias -Name npmr -Value Update-NPMLockfile
+Set-Alias -Name npmls -Value Get-InstalledNPMPackages
+Set-Alias -Name npmgls -Value Get-InstalledGlobalNPMPackages
 Set-Alias -Name hosts -Value Set-Hosts
 Set-Alias -Name psedit -Value Set-PowerShellConfig
 Set-Alias -Name term -Value Open-Terminal

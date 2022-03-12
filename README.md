@@ -6,6 +6,10 @@
 <a href="https://www.linkedin.com/in/jeroen--akkerman/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 <a href="https://stackoverflow.com/users/6413844/"><img src="https://img.shields.io/badge/StackOverflow-%23F48225.svg?&style=for-the-badge&logo=stackoverflow&logoColor=white" alt="StackOverflow"/></a>
 </p>
+<a href="https://discord.com/users/96746840958959616"><img src="https://img.shields.io/badge/Ionaru%233801-%235865f2.svg?&style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/></a>
+</p>
+<a href="https://steamcommunity.com/id/Ionaru/"><img src="https://img.shields.io/badge/Steam-%23000.svg?&style=for-the-badge&logo=steam&logoColor=white" alt="Steam"/></a>
+</p>
 
 <br>
 
@@ -23,17 +27,16 @@
 <em>Under construction 🏗️</em>
 </p>
 
+
+<!-- Here are some ideas to get you started: -->
+
+- 🔭 I'm currently working on: Migrating a legacy JS codebase to ESM
+- 🌱 I'm currently learning: React
+- 💬 My interests: Board games, transportation, hiking in the mountains
+- 📫 How to reach me: <a href="https://www.linkedin.com/in/jeroen--akkerman/">LinkedIn</a> or <a href="https://discord.com/users/96746840958959616">Discord</a>
 <!--
-**Ionaru/Ionaru** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
 - 👯 I’m looking to collaborate on ...
 - 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
@@ -59,15 +62,14 @@ Here are some ideas to get you started:
 <a href="https://www.typescriptlang.org/" target="_blank">
 <img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/></a>
 &nbsp&nbsp&nbsp
-<a href="https://nodejs.org/en/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/></a>
-&nbsp&nbsp&nbsp
 <a href="https://angular.io/" target="_blank">
 <img height="40px" src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" width="40" height="40"/></a>
-<a href="https://nestjs.com/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg" alt="NestJS" width="40" height="40"/></a>
+<a href="https://reactjs.org/" target="_blank">
+<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="40" height="40"/></a>
 <a href="https://jestjs.io/" target="_blank">
 <img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg" alt="Jest" width="40" height="40"/></a>
+<a href="https://nestjs.com/" target="_blank">
+<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg" alt="NestJS" width="40" height="40"/></a>
 <a href="https://laravel.com/" target="_blank">
 <img height="40px" src="https://laravel.com/img/logomark.min.svg" alt="Laravel" width="40" height="40"/></a>
 <br>

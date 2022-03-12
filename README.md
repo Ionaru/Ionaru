@@ -5,9 +5,7 @@
 <p align="center">
 <a href="https://www.linkedin.com/in/jeroen--akkerman/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 <a href="https://stackoverflow.com/users/6413844/"><img src="https://img.shields.io/badge/StackOverflow-%23F48225.svg?&style=for-the-badge&logo=stackoverflow&logoColor=white" alt="StackOverflow"/></a>
-</p>
 <a href="https://discord.com/users/96746840958959616"><img src="https://img.shields.io/badge/Ionaru%233801-%235865f2.svg?&style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/></a>
-</p>
 <a href="https://steamcommunity.com/id/Ionaru/"><img src="https://img.shields.io/badge/Steam-%23000.svg?&style=for-the-badge&logo=steam&logoColor=white" alt="Steam"/></a>
 </p>
 

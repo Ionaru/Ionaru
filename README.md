@@ -22,7 +22,7 @@
 <br>
 
 <p align="center">
-<em>Under construction 🏗️</em>
+<!-- <em>Under construction 🏗️</em> -->
 </p>
 
 
@@ -93,5 +93,4 @@
 <hr>
 <br>
 <p align="center">
-<em>Under construction 🏗️</em>
 </p>

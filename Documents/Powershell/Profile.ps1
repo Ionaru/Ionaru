@@ -7,7 +7,7 @@ Function Test-CommandExists
     $ErrorActionPreference = 'stop'
 
     try { if (Get-Command $command) { RETURN $true } }
-    Catch { Write-Host "$command does not exist"; RETURN $false }
+    Catch { RETURN $false }
     Finally { $ErrorActionPreference = $oldPreference }
 }
 
@@ -125,8 +125,18 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 $PlatformExtensionsFile = "$ConfigFolder\PlatformExtensions.ps1"
 if (Test-Path -Path $PlatformExtensionsFile -PathType Leaf) {
-    Write-Output "Loading $PlatformExtensionsFile"
+    Write-Host "Loading $PlatformExtensionsFile"
     .$PlatformExtensionsFile
 }
 
-Invoke-Expression (&starship init powershell)
+if (Test-CommandExists starship) {
+    Invoke-Expression (&starship init powershell)
+} else {
+    Write-Host "Starship prompt not installed: https://starship.rs/" -ForegroundColor Red
+}
+
+if (Get-Module -ListAvailable -Name Terminal-Icons) {
+    Import-Module Terminal-Icons
+} else {
+    Write-Host "Terminal icons not installed: https://github.com/devblackops/Terminal-Icons" -ForegroundColor Red
+}

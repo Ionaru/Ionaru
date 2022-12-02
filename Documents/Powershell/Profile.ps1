@@ -7,16 +7,32 @@ Function Test-CommandExists
     $ErrorActionPreference = 'stop'
 
     try { if (Get-Command $command) { RETURN $true } }
-    Catch { RETURN $false }
+    Catch {
+        Write-Host "Command '$command' not found" -ForegroundColor Yellow
+        RETURN $false
+    }
     Finally { $ErrorActionPreference = $oldPreference }
 }
 
 function Update-All {
-    if (test scoop) {
+    if (Test-CommandExists scoop) {
+        Write-Host "Updating scoop packages..." -ForegroundColor Green
         scoop update
         scoop cleanup *
     }
-    npm-check -guy
+    if (Test-CommandExists ncu) {
+        Write-Host "Checking for updated npm packages..." -ForegroundColor Green
+        $updateCommand = ncu -g | Select-Object -Last 2
+        # if starts with npm
+        if ($updateCommand -like "npm -g install *") {
+            Invoke-Expression $updateCommand[0]
+        }
+        else {
+            Write-Host "Global npm packages are up-to-date!" -ForegroundColor Green
+        }
+    }
+
+    Write-Host "All done!" -ForegroundColor Green
 }
 
 function Set-Hosts {

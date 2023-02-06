@@ -18,13 +18,15 @@ function Update-All {
     if (Test-CommandExists scoop) {
         Write-Host "Updating scoop packages..." -ForegroundColor Green
         scoop update
+        scoop update *
         scoop cleanup *
     }
-    if (Test-CommandExists ncu) {
+    if (Test-CommandExists npx) {
         Write-Host "Checking for updated npm packages..." -ForegroundColor Green
-        $updateCommand = ncu -g | Select-Object -Last 2
+        $updateCommand = npx ncu -g | Select-Object -Last 2
         # if starts with npm
         if ($updateCommand -like "npm -g install *") {
+            Write-Output $updateCommand[0]
             Invoke-Expression $updateCommand[0]
         }
         else {
@@ -121,7 +123,7 @@ function Get-MyRepo {
 }
 
 Set-Alias -Name test -Value Test-CommandExists
-Set-Alias -Name update -Value Update-All
+Set-Alias -Name upgrade -Value Update-All
 Set-Alias -Name npmu -Value Update-NPMModules
 Set-Alias -Name npmr -Value Update-NPMLockfile
 Set-Alias -Name npmls -Value Get-InstalledNPMPackages

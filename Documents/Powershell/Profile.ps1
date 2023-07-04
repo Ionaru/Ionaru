@@ -130,7 +130,7 @@ Set-Alias -Name test -Value Test-CommandExists
 Set-Alias -Name upgrade -Value Update-All
 Set-Alias -Name npmu -Value Update-NPMModules
 Set-Alias -Name npmr -Value Update-NPMLockfile
-Set-Alias -Name npmcr -Value Update-NPMLockfile
+Set-Alias -Name npmcr -Value Update-NPMCleanLockfile
 Set-Alias -Name npmls -Value Get-InstalledNPMPackages
 Set-Alias -Name npmgls -Value Get-InstalledGlobalNPMPackages
 Set-Alias -Name hosts -Value Set-Hosts

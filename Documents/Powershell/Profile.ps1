@@ -47,19 +47,23 @@ function Set-PowerShellConfig {
     code $ConfigFolder
 }
 
-function Update-NPMModules {
-    # Updates, then removes the node_modules folder and package-lock.json, then installs packages again (hard update).
-    npm-check -uy
-    Remove-Item node_modules -Recurse
-    Remove-Item package-lock.json
-    npm install
-}
-
 function Update-NPMLockfile {
     # Removes the node_modules folder and package-lock.json, then installs packages again (soft update).
     Remove-Item node_modules -Recurse
     Remove-Item package-lock.json
     npm install
+}
+
+function Update-NPMModules {
+    # Updates, then removes the node_modules folder and package-lock.json, then installs packages again (hard update).
+    ncu -u
+    Update-NPMLockfile
+}
+
+function Update-NPMCleanLockfile {
+    # Removes the node_modules folder and package-lock.json, then installs packages again (soft update).
+    npm cache clean --force
+    Update-NPMLockfile
 }
 
 function Get-InstalledGlobalNPMPackages {
@@ -126,6 +130,7 @@ Set-Alias -Name test -Value Test-CommandExists
 Set-Alias -Name upgrade -Value Update-All
 Set-Alias -Name npmu -Value Update-NPMModules
 Set-Alias -Name npmr -Value Update-NPMLockfile
+Set-Alias -Name npmcr -Value Update-NPMLockfile
 Set-Alias -Name npmls -Value Get-InstalledNPMPackages
 Set-Alias -Name npmgls -Value Get-InstalledGlobalNPMPackages
 Set-Alias -Name hosts -Value Set-Hosts
@@ -151,6 +156,12 @@ if (Test-CommandExists starship) {
     Invoke-Expression (&starship init powershell)
 } else {
     Write-Host "Starship prompt not installed: https://starship.rs/" -ForegroundColor Red
+}
+
+if (Get-Module -ListAvailable -Name posh-git) {
+    Import-Module posh-git
+} else {
+    Write-Host "Posh git not installed: https://github.com/dahlbyk/posh-git" -ForegroundColor Red
 }
 
 if (Get-Module -ListAvailable -Name Terminal-Icons) {

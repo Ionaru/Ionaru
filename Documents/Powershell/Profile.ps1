@@ -23,7 +23,7 @@ function Update-All {
     }
     if (Test-CommandExists npx) {
         Write-Host "Checking for updated npm packages..." -ForegroundColor Green
-        $updateCommand = npx ncu -g | Select-Object -Last 2
+        $updateCommand = npx npm-check-updates -g | Select-Object -Last 2
         # if starts with npm
         if ($updateCommand -like "npm -g install *") {
             Write-Output $updateCommand[0]

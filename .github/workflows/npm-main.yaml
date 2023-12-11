@@ -71,6 +71,9 @@ jobs:
       - name: Install packages
         run: npm ci
 
+      - name: Build
+        run: npm run build
+
       - name: Deploy @latest version to npm
         if: startsWith(github.ref, 'refs/tags/')
         uses: JS-DevTools/npm-publish@v3

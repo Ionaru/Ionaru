@@ -94,7 +94,7 @@ jobs:
 
       - name: Deploy @latest version to JSR
         if: startsWith(github.ref, 'refs/tags/') && inputs.deploy-jsr
-        run: npx jsr publish --provenance
+        run: npx jsr publish
 
       - name: Update @next version
         if: startsWith(github.ref, 'refs/heads/') && inputs.deploy-npm

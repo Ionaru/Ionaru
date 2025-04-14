@@ -5,8 +5,7 @@
 <p align="center">
 <a href="https://www.linkedin.com/in/jeroen--akkerman/"><img src="https://img.shields.io/badge/linkedin-%230a66c2.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 <a href="https://stackoverflow.com/users/6413844/"><img src="https://img.shields.io/badge/StackOverflow-%23F48225.svg?&style=for-the-badge&logo=stackoverflow&logoColor=white" alt="StackOverflow"/></a>
-<a href="https://discord.com/users/96746840958959616"><img src="https://img.shields.io/badge/Ionaru%233801-%235865f2.svg?&style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/></a>
-<a href="https://steamcommunity.com/id/Ionaru/"><img src="https://img.shields.io/badge/Steam-%23000.svg?&style=for-the-badge&logo=steam&logoColor=white" alt="Steam"/></a>
+<a href="https://discord.com/users/96746840958959616"><img src="https://img.shields.io/badge/Ionaru-%235865f2.svg?&style=for-the-badge&logo=discord&logoColor=white" alt="Discord"/></a>
 </p>
 
 <br>
@@ -25,11 +24,10 @@
 <!-- <em>Under construction 🏗️</em> -->
 </p>
 
-
 <!-- Here are some ideas to get you started: -->
 
 - 🔭 I'm currently working on: Migrating a legacy JS codebase to modern ESM
-- 🌱 I'm currently learning: How microservices communicate with each other.
+- 🌱 I'm currently learning: CQRS.
 - 💬 My interests: Board games, transportation, hiking in the mountains
 - 📫 How to reach me: <a href="https://www.linkedin.com/in/jeroen--akkerman/">LinkedIn</a> or <a href="https://discord.com/users/96746840958959616">Discord</a>
 <!--
@@ -37,8 +35,7 @@
 - 🤔 I’m looking for help with ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
--->
-
+  -->
 
 <br />
 <br />
@@ -61,8 +58,8 @@
 <a href="https://www.python.org/" target="_blank">
 <img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/></a>
 <br>
-<a href="https://angular.io/" target="_blank">
-<img height="40px" src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" width="40" height="40"/></a>
+<a href="https://angular.dev/" target="_blank">
+<img height="40px" src="https://logosandtypes.com/wp-content/uploads/2024/01/angular.svg" alt="Angular" width="40" height="40"/></a>
 <a href="https://vuejs.org/" target="_blank">
 <img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="40" height="40"/></a>
 <a href="https://jestjs.io/" target="_blank">
@@ -70,7 +67,7 @@
 <a href="https://ionicframework.com/" target="_blank">
 <img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ionic/ionic-original.svg" alt="Ionic" width="40" height="40"/></a>
 <a href="https://nestjs.com/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg" alt="NestJS" width="40" height="40"/></a>
+<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-original.svg" alt="NestJS" width="40" height="40"/></a>
 <a href="https://laravel.com/" target="_blank">
 <img height="40px" src="https://laravel.com/img/logomark.min.svg" alt="Laravel" width="40" height="40"/></a>
 <br>

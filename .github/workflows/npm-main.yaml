@@ -5,6 +5,18 @@ on:
 
     inputs:
 
+      test-deno:
+        description: 'Test with Deno.'
+        default: false
+        required: false
+        type: boolean
+
+      test-bun:
+        description: 'Test with Bun.'
+        default: false
+        required: false
+        type: boolean
+
       deploy-npm:
         description: 'Deploy to npm.'
         default: true
@@ -31,75 +43,116 @@ on:
 
 jobs:
 
-  test:
-
+  audit:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - uses: actions/checkout@v4
+      - name: Audit dependencies
+        run: npm audit --omit=dev
 
+  test-node:
+    needs: [ audit ]
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: ${{ fromJson(inputs.node-versions) }}
-
     steps:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-
       - name: Update npm
         run: npm i -g npm@latest
-
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Audit
-        run: npm audit --omit=dev
-
       - name: Install packages
         run: npm ci
-
       - name: Test
         run: npm test
+      - name: Upload coverage
+        uses: codecov/codecov-action@v5
+        with:
+          directory: coverage
 
+  test-deno:
+    needs: [ audit ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if job should run
+        id: check_run
+        run: |
+          if [ "${{ inputs.test-deno }}" != "true" ]; then
+            echo "Skipping job as per input."
+            exit 0
+          fi
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: lts
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install packages
+        run: deno install
+      - name: Test
+        run: deno run test
+      - name: Upload coverage
+        uses: codecov/codecov-action@v5
+        with:
+          directory: coverage
+
+  test-bun:
+    needs: [ audit ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if job should run
+        id: check_run
+        run: |
+          if [ "${{ inputs.test-bun }}" != "true" ]; then
+            echo "Skipping job as per input."
+            exit 0
+          fi
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install packages
+        run: bun install
+      - name: Test
+        run: bun run test
       - name: Upload coverage
         uses: codecov/codecov-action@v5
         with:
           directory: coverage
 
   deploy:
-
-    needs: [ test ]
+    needs: [ test-node, test-deno, test-bun ]
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write
     if: github.event_name == 'push'
-
     steps:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-
       - name: Update npm
         run: npm i -g npm@latest
-
       - uses: actions/checkout@v4
-
       - name: Install packages
         run: npm ci
-
       - name: Deploy @latest version to npm
         if: startsWith(github.ref, 'refs/tags/') && inputs.deploy-npm
         uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
-
       - name: Deploy @latest version to JSR
         if: startsWith(github.ref, 'refs/tags/') && inputs.deploy-jsr
         run: npx jsr publish
-
       - name: Update @next version
         if: startsWith(github.ref, 'refs/heads/') && inputs.deploy-npm
         run: npm version prerelease --no-git-tag-version --preid "$GITHUB_RUN_NUMBER"
-
       - name: Deploy @next version to npm
         if: startsWith(github.ref, 'refs/heads/') && inputs.deploy-npm
         uses: JS-DevTools/npm-publish@v3

@@ -41,6 +41,10 @@ on:
         description: 'NPM audit token, omit to skip deployment.'
         required: true
 
+      CODECOV_TOKEN:
+        description: 'Codecov token, omit to skip coverage upload.'
+        required: false
+
 jobs:
 
   audit:

@@ -75,6 +75,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           directory: coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   test-deno:
     needs: [ audit ]
@@ -100,6 +101,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           directory: coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   test-bun:
     needs: [ audit ]
@@ -125,6 +127,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           directory: coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   deploy:
     needs: [ test-node, test-deno, test-bun ]

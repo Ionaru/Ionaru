@@ -159,4 +159,3 @@ jobs:
         with:
           tag: next
           token: ${{ secrets.NPM_TOKEN }}
-          check-version: false

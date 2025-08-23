@@ -126,6 +126,38 @@ function Get-MyRepo {
     git clone https://github.com/Ionaru/$Repo
 }
 
+function Get-PackageManager {
+    # Detect package manager from package.json
+    if (-not (Test-Path "package.json")) {
+        Write-Error "No package.json found in current directory"
+        $global:LASTEXITCODE = 1
+        return
+    }
+    $packageJson = Get-Content "package.json" -Raw | ConvertFrom-Json
+    $manager = $packageJson.packageManager
+
+    if ($manager -match "^npm") {
+        Write-Host "Using npm" -ForegroundColor Green
+        $exe = "npm"
+    } elseif ($manager -match "^pnpm") {
+        Write-Host "Using pnpm" -ForegroundColor Green
+        $exe = "pnpm"
+    } elseif ($manager -match "^yarn") {
+        Write-Host "Using yarn" -ForegroundColor Green
+        $exe = "yarn"
+    } elseif ($null -eq $manager) {
+        Write-Warning "No packageManager field found in package.json, using npm"
+        $exe = "npm"
+    } else {
+        Write-Warning "Unknown package manager: $manager"
+        $global:LASTEXITCODE = 1
+        return
+    }
+
+    # Forward arguments to the package manager
+    & $exe @args
+}
+
 Set-Alias -Name test -Value Test-CommandExists
 Set-Alias -Name upgrade -Value Update-All
 Set-Alias -Name npmu -Value Update-NPMModules
@@ -143,6 +175,7 @@ Set-Alias -Name np -Value Open-TerminalPane
 Set-Alias -Name npmit -Value Get-TypedNPMPackage
 Set-Alias -Name touch -Value Set-FileTouched
 Set-Alias -Name clone -Value Get-MyRepo
+Set-Alias -Name pm -Value Get-PackageManager
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 

@@ -1,10 +1,11 @@
-format = "WIN -> $all"
+format = '$os-> $all'
 
 [directory]
-truncation_symbol = "…/"
+truncation_symbol = '…/'
+use_os_path_sep = false
 
 [nodejs]
-symbol = "⬢ "
+symbol = '⬢ '
 
 [docker_context]
 disabled = true
@@ -14,3 +15,11 @@ disabled = false
 
 [git_commit]
 only_detached = false
+
+[os]
+disabled = false
+
+[os.symbols]
+Ubuntu = 'WSL '
+Windows = 'WIN '
+

@@ -44,54 +44,69 @@
 </p>
 <p align="center">
 <a href="https://www.w3.org/html/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" width="40" height="40"/></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" width="40" height="40"/></a>
 <a href="https://sass-lang.com/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="Sass" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="Sass" width="40" height="40"/></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript " width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript " width="40" height="40"/></a>
 <a href="https://www.typescriptlang.org/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="Typescript" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="Typescript" width="40" height="40"/></a>
 <a href="https://www.php.net/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" width="40" height="40"/></a>
 <a href="https://www.python.org/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/></a>
 <br>
 <a href="https://angular.dev/" target="_blank">
-<img height="40px" src="https://logosandtypes.com/wp-content/uploads/2024/01/angular.svg" alt="Angular" width="40" height="40"/></a>
+<img src="https://logosandtypes.com/wp-content/uploads/2024/01/angular.svg" alt="Angular" width="40" height="40"/></a>
 <a href="https://vuejs.org/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="40" height="40"/></a>
 <a href="https://jestjs.io/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg" alt="Jest" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg" alt="Jest" width="40" height="40"/></a>
 <a href="https://ionicframework.com/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ionic/ionic-original.svg" alt="Ionic" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ionic/ionic-original.svg" alt="Ionic" width="40" height="40"/></a>
 <a href="https://nestjs.com/" target="_blank">
-<img height="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-original.svg" alt="NestJS" width="40" height="40"/></a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-original.svg" alt="NestJS" width="40" height="40"/></a>
 <a href="https://laravel.com/" target="_blank">
-<img height="40px" src="https://laravel.com/img/logomark.min.svg" alt="Laravel" width="40" height="40"/></a>
+<img src="https://laravel.com/img/logomark.min.svg" alt="Laravel" width="40" height="40"/></a>
 <br>
 <a href="https://www.mysql.com/" target="_blank">
-<img height="40px" alt="MySQL" width="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"/></a>
+<img height="40" alt="MySQL" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"/></a>
 <a href="https://sqlite.org/" target="_blank">
-<img height="40px" alt="SQLite" width="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg"/></a>
+<img height="40" alt="SQLite" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg"/></a>
 <a href="https://www.postgresql.org/" target="_blank">
-<img height="40px" alt="PostgreSQL" width="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"/></a>
+<img height="40" alt="PostgreSQL" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"/></a>
 <a href="https://redis.io/" target="_blank">
-<img height="40px" alt="Redis" width="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"/></a>
+<img height="40" alt="Redis" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"/></a>
 <a href="https://www.mongodb.com/" target="_blank">
-<img height="40px" alt="Mongo DB" width="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"/></a>
+<img height="40" alt="Mongo DB" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"/></a>
 <br>
-<a href="https://code.visualstudio.com/" target="_blank">
-<img height="40px" alt="Visual Studio Code" width="40px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"/></a>
+<a href="https://cursor.com/" target="_blank">
+<img height="40" alt="Cursor" width="40" src="https://cursor.com/_next/static/media/placeholder-logo.da8a9d2b.webp"/></a>
 <a href="https://www.jetbrains.com/idea/" target="_blank">
-<img height="40px" alt="IntelliJ IDEA Ultimate" width="40px" src="https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg"/></a>
+<img height="40" alt="IntelliJ IDEA Ultimate" width="40" src="https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA_icon.svg"/></a>
 <a href="https://git-scm.com/" target="_blank">
-<img height="40px" alt="Git" width="40px" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/git-icon.svg"/></a>
+<img height="40" alt="Git" width="40" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/git-icon.svg"/></a>
 <a href="https://github.com/Ionaru" target="_blank">
-<img height="40px" alt="GitHub" width="40px" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/github-icon.svg"/></a>
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github.com/user-attachments/assets/fb496f37-03fe-461a-8ea9-af0917d4e53c"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://github.com/user-attachments/assets/b7950c02-2acd-47cb-930a-0979c57f10bb"
+  />
+  <img
+    alt="GitHub"
+    src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/git-icon.svg"
+    width="40"
+    height="40"
+  />
+</picture></a>
 <a href="https://www.docker.com/" target="_blank">
-<img height="40px" alt="Docker" width="40px" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/docker-icon.svg"/></a>
+<img height="40" alt="Docker" width="40" src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/docker-icon.svg"/></a>
 </p>
 <hr>
 <br>

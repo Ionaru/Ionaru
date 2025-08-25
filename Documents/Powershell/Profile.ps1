@@ -158,6 +158,10 @@ function Get-PackageManager {
     & $exe @args
 }
 
+function Invoke-Starship-PreCommand {
+  $host.ui.RawUI.WindowTitle = Split-Path -Leaf (Get-Location)
+}
+
 Set-Alias -Name test -Value Test-CommandExists
 Set-Alias -Name upgrade -Value Update-All
 Set-Alias -Name npmu -Value Update-NPMModules

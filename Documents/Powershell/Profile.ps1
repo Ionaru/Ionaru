@@ -159,7 +159,7 @@ function Get-PackageManager {
 }
 
 function Invoke-Starship-PreCommand {
-  $host.ui.RawUI.WindowTitle = Split-Path -Leaf (Get-Location)
+  $host.ui.RawUI.WindowTitle = "📂 " + $(Split-Path -Leaf (Get-Location))
 }
 
 Set-Alias -Name test -Value Test-CommandExists

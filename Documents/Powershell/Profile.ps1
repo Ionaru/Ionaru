@@ -134,7 +134,7 @@ function Get-PackageManager {
         return
     }
     $packageJson = Get-Content "package.json" -Raw | ConvertFrom-Json
-    $manager = $packageJson.packageManager
+    $manager = $packageJson.packageManager || $packageJson.devEngines.packageManager.name
 
     if ($manager -match "^npm") {
         Write-Host "Using npm" -ForegroundColor Green
@@ -155,7 +155,7 @@ function Get-PackageManager {
     }
 
     # Forward arguments to the package manager
-    & $exe @args
+    & corepack $exe @args
 }
 
 function Invoke-Starship-PreCommand {

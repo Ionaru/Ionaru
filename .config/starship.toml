@@ -23,3 +23,6 @@ disabled = false
 Ubuntu = 'WSL '
 Windows = 'WIN '
 
+[status]
+format = '[$status]($style) '
+disabled = false

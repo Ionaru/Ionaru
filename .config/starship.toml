@@ -20,8 +20,8 @@ only_detached = false
 disabled = false
 
 [os.symbols]
-Ubuntu = 'WSL '
-Windows = 'WIN '
+Ubuntu = '🐧 '
+Windows = '🪟 '
 
 [status]
 format = '[$status]($style) '

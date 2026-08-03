@@ -27,8 +27,9 @@
 - Never use the em-dash character (`—`). Use a comma, colon, parentheses, or a full stop instead, whichever fits the sentence. This applies to all prose, comments, commit messages, and documentation.
 
 ## Workflows & ultracode
-- Match the model to the task instead of running everything on one tier. Within whichever family you pick, always use the most recent release, and check the available model list rather than assuming version numbers.
-- **Default: Sonnet.** Use the most recent Sonnet for ordinary implementation work and whenever no other rule applies.
-- **Step up to the strongest available model (Opus or Fable)** when correctness and judgement dominate and output volume is modest: code review, bug hunting, debugging subtle or intermittent failures, security-sensitive changes, and architecture decisions. A missed bug costs far more than the extra tokens.
-- **Step down to Haiku** for exploration and high-token grunt work where per-call quality matters less: mapping or scanning a codebase, summarizing many files, bulk mechanical edits, crunching logs or large test output. Stay on Sonnet if the exploration still needs real reasoning, but never spend Opus or Fable on bulk reading.
-- When a task mixes both, split it: a cheap model for the broad sweep, a strong model for the judgement pass over the findings.
+- Model choice is a token-budget decision. Default cheap and escalate only when a task genuinely demands it; most tasks don't. Within whichever family you pick, always use the most recent release, and check the available model list rather than assuming version numbers.
+- **Sonnet is the default and the workhorse.** At the default reasoning level (extra) it handles difficult but narrow tasks perfectly well: implementation, focused refactors, targeted bug fixes, routine review. Difficulty alone is not a reason to escalate; escalate only when a task is both hard *and* broad, deep, or expensive to get wrong.
+- **Step down to Haiku** for exploration and high-token grunt work where per-call quality barely matters: mapping or scanning a codebase, summarizing many files, bulk mechanical edits, crunching logs or large test output. This is where most of the token savings live.
+- **Opus is for genuinely difficult tasks and deep debugging**: subtle or intermittent failures, gnarly cross-cutting bugs, security-sensitive changes, and reviews where a miss is expensive.
+- **Fable is reserved exclusively for the hardest tasks**, the ones where Opus has failed or clearly won't cut it. Never spawn more than one Fable agent at a time, and never point Fable at anything token-heavy.
+- When a task mixes tiers, split it: a cheap model for the broad sweep, an expensive model only for the judgement pass over the findings.

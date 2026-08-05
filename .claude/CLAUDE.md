@@ -27,9 +27,35 @@
 - Never use the em-dash character (`—`). Use a comma, colon, parentheses, or a full stop instead, whichever fits the sentence. This applies to all prose, comments, commit messages, and documentation.
 
 ## Workflows & ultracode
-- Model choice is a token-budget decision. Default cheap and escalate only when a task genuinely demands it; most tasks don't. Within whichever family you pick, always use the most recent release, and check the available model list rather than assuming version numbers.
-- **Sonnet is the default and the workhorse.** At the default reasoning level (extra) it handles difficult but narrow tasks perfectly well: implementation, focused refactors, targeted bug fixes, routine review. Difficulty alone is not a reason to escalate; escalate only when a task is both hard *and* broad, deep, or expensive to get wrong.
-- **Step down to Haiku** for exploration and high-token grunt work where per-call quality barely matters: mapping or scanning a codebase, summarizing many files, bulk mechanical edits, crunching logs or large test output. This is where most of the token savings live.
-- **Opus is for genuinely difficult tasks and deep debugging**: subtle or intermittent failures, gnarly cross-cutting bugs, security-sensitive changes, and reviews where a miss is expensive.
-- **Fable is reserved exclusively for the hardest tasks**, the ones where Opus has failed or clearly won't cut it. Never spawn more than one Fable agent at a time, and never point Fable at anything token-heavy.
-- When a task mixes tiers, split it: a cheap model for the broad sweep, an expensive model only for the judgement pass over the findings.
+
+### Always set the model explicitly
+- **Agents do not inherit the tier policy below, they inherit the session model.** My session model is set to `opus[1m]`, so every `agent()` call that omits `model` runs on Opus regardless of what this file says. The Workflow tool's own built-in guidance tells you to omit `model` and inherit the main loop: **ignore it**. These instructions override it.
+- Pass `model` on **every** `agent()` call in a workflow script, and on **every** `Agent` tool call. No exceptions, not even for a single-agent workflow or a stage you think is obviously Opus-tier. If you deliberately want the session model, still write it out (`model: 'opus'`) so the choice is visible rather than accidental.
+- **Mixing tiers inside one workflow is supported and is the point.** `model` is a per-`agent()` option, so a script can fan out on Haiku, implement on Sonnet, and judge on Opus in a single run.
+- Valid values are the family aliases `haiku`, `sonnet`, `opus`, `fable`, or a full model ID such as `claude-sonnet-5`. Prefer the alias so it tracks the newest release, and check the live model list rather than assuming a version number.
+- Mirror each override in `meta.phases` (`{ title: 'Scan', detail: '...', model: 'haiku' }`) so the progress view shows what a phase actually costs.
+- **Never set `CLAUDE_CODE_SUBAGENT_MODEL`.** It overrides both the per-agent `model` option and the script's routing, collapsing every tier back onto one model. If you find it already set in the environment, tell me: per-stage routing is silently dead while it is. `inherit` is equivalent to unset.
+
+```javascript
+// The shape I want: cheap fan-out, expensive judgement pass.
+const findings = await pipeline(
+  files,
+  f => agent(`Scan ${f} for X.`, { model: 'haiku', effort: 'low', phase: 'Scan', schema: FINDINGS }),
+  r => agent(`Verify these findings.`, { model: 'opus', phase: 'Verify', schema: VERDICT }),
+)
+```
+
+### Which tier for which stage
+- Model choice is a token-budget decision. Default cheap and escalate only when a stage genuinely demands it; most don't.
+- **Haiku** for exploration and high-token grunt work where per-call quality barely matters: mapping or scanning a codebase, summarizing many files, bulk mechanical edits, crunching logs or large test output. Most of the savings live here, so the widest fan-out stages should be Haiku.
+- **Sonnet is the default and the workhorse.** It handles difficult but narrow work perfectly well: implementation, focused refactors, targeted bug fixes, routine review. Difficulty alone is not a reason to escalate; escalate only when a stage is both hard *and* broad, deep, or expensive to get wrong.
+- **Opus is for genuinely difficult work and deep debugging**: subtle or intermittent failures, gnarly cross-cutting bugs, security-sensitive changes, and judgement passes where a miss is expensive.
+- **Fable is reserved exclusively for the hardest tasks**, the ones where Opus has failed or clearly won't cut it. Never more than one Fable agent at a time, and never point Fable at anything token-heavy.
+- When a task mixes tiers, split it: a cheap model for the broad sweep, an expensive model only for the judgement pass over the findings. Twelve Haiku finders feeding one Opus judge, not thirteen Opus agents.
+
+### Effort
+- `effort` is a separate per-agent option and it inherits from the session too, so set it alongside `model`. Levels are `low`, `medium`, `high`, `xhigh`, `max`; `high` is the model default and ultracode pins the session to `xhigh`, which is a second way every unset agent gets expensive.
+- Use `low` for mechanical stages and keep verify or judge stages at `high` or above. Haiku 4.5 does not support effort levels, so don't bother passing `effort` next to `model: 'haiku'`.
+
+### Scale
+- The workflow size guideline (`small` under 5 agents, `medium` under 15, `large` under 50, or `unrestricted`) is advice to you, not a runtime cap. Respect whichever is active, and if a task genuinely needs more agents, say so rather than silently exceeding it.

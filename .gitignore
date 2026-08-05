@@ -1,13 +1,38 @@
-# Ignore everything
+# Ignore everything at the repository root.
 /*
 
-# Except these files/folders
-!.gitignore
-!.editorconfig
-!README.md
-!.vscode/icons.css
-!.wslconfig
-!.config/starship.toml
-!Documents/Powershell/Profile.ps1
-!.github/
-!.claude/CLAUDE.md
+# Git never descends into an ignored directory, so a negation cannot re-include
+# a file whose parent directory is still excluded. Every nested path below
+# therefore needs three steps: un-ignore the directory, re-ignore its contents,
+# then re-include the one file that should be tracked.
+
+# Root files
+!/.editorconfig
+!/.gitignore
+!/.wslconfig
+!/README.md
+
+# .claude/
+!/.claude/
+/.claude/*
+!/.claude/CLAUDE.md
+
+# .config/
+!/.config/
+/.config/*
+!/.config/starship.toml
+
+# .github/ is tracked in full, so its contents are left un-ignored.
+!/.github/
+
+# .vscode/
+!/.vscode/
+/.vscode/*
+!/.vscode/icons.css
+
+# Documents/Powershell/
+!/Documents/
+/Documents/*
+!/Documents/Powershell/
+/Documents/Powershell/*
+!/Documents/Powershell/Profile.ps1
